@@ -15,7 +15,7 @@ describe('Countdown', () => {
         it('should set state to started and countdown', (done) => {
             var countdown = TestUtils.renderIntoDocument(<Countdown/>);
             countdown.handleSetCountDown(10);
-
+            
             expect(countdown.state.count).toBe(10);
             expect(countdown.state.countdownStatus).toBe('started');
 
@@ -25,17 +25,14 @@ describe('Countdown', () => {
             }, 1001);
         });
 
-        it('should set state to started and countdown', (done) => {
+        it('should never set count less then zero', (done) => {
             var countdown = TestUtils.renderIntoDocument(<Countdown/>);
-            countdown.handleSetCountDown(10);
-
-            expect(countdown.state.count).toBe(10);
-            expect(countdown.state.countdownStatus).toBe('started');
+            countdown.handleSetCountDown(1);
 
             setTimeout( () => {
-                expect(countdown.state.count).toBe(9);
+                expect(countdown.state.count).toBe(0);
                 done();
-            }, 1001);
+            }, 3001);
         });
     });
 });
