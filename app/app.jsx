@@ -18,5 +18,5 @@ ReactDOM.render(
             <IndexRoute component={Timer}/>
         </Route>
     </Router>,
-    document.getElementById('app')
+    document.getElementById('app')    
 );
