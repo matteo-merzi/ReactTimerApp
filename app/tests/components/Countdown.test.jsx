@@ -11,7 +11,7 @@ describe('Countdown', () => {
         expect(Countdown).toExist();
     });
 
-    describe('handleSetCountDown', () => {
+    describe('handleSetCountDown', (done) => {
         it('should set state to started and countdown', (done) => {
             var countdown = TestUtils.renderIntoDocument(<Countdown/>);
             countdown.handleSetCountDown(10);
